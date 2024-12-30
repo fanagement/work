@@ -1,0 +1,39 @@
+{
+  "name": "shook",
+  "version": "1.0.0",
+  "build": {
+    "appId": "com.example.app",
+    "win": {
+      "target": "portable",
+      "icon": "admin_logo.png",
+      "publisherName": "jm4293"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "admin_logo.png",
+      "identity": "jm4293"
+    }
+  },
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "electron-builder",
+    "build:osx": "electron-builder --mac",
+    "build:win64": "electron-builder --win portable --x64"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "module",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8"
+  },
+  "dependencies": {
+    "electron-store": "^10.0.0",
+    "prettier": "^3.4.2",
+    "puppeteer": "^23.11.1"
+  }
+}

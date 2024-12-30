@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta charset="utf-8" />
+    <title>Shook</title>
+  </head>
+  <body style="margin: 0; padding: 0">
+    <div
+      style="
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div style="display: flex; flex-direction: column; gap: 20px">
+        <div style="display: flex; flex-direction: column; gap: 5px">
+          <label for="input-email">이메일</label>
+          <input type="text" id="input-email" name="email" />
+          <label for="input-password">비밀번호</label>
+          <input type="password" id="input-password" name="password" />
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <button id="button-save">저장</button>
+          <button id="button-go">출근</button>
+          <button id="button-out">퇴근</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('button-save').addEventListener('click', () => {
+        const email = document.getElementById('input-email').value;
+        const password = document.getElementById('input-password').value;
+
+        if (window.api && window.api.send) {
+          window.api.send('toSave', { email, password });
+        } else {
+          console.error(
+            'window.api is undefined or window.api.send is not available'
+          );
+        }
+      });
+
+      document.getElementById('button-go').addEventListener('click', () => {
+        const email = document.getElementById('input-email').value;
+        const password = document.getElementById('input-password').value;
+
+        if (window.api && window.api.send) {
+          window.api.send('toWork', { email, password });
+        } else {
+          console.error(
+            'window.api is undefined or window.api.send is not available'
+          );
+        }
+      });
+
+      document.getElementById('button-out').addEventListener('click', () => {
+        const email = document.getElementById('input-email').value;
+        const password = document.getElementById('input-password').value;
+
+        // 메인 프로세스로 이메일과 비밀번호를 전달
+        if (window.api && window.api.send) {
+          window.api.send('toOut', { email, password });
+        } else {
+          console.error(
+            'window.api is undefined or window.api.send is not available'
+          );
+        }
+      });
+    </script>
+  </body>
+</html>
