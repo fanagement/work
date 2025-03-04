@@ -1,16 +1,16 @@
 {
-  "name": "shook",
+  "name": "FUZ",
   "version": "1.0.0",
   "build": {
     "appId": "com.example.app",
     "win": {
       "target": "portable",
-      "icon": "admin_logo.png",
+      "icon": "fuz-logo.png",
       "publisherName": "jm4293"
     },
     "mac": {
       "target": "dmg",
-      "icon": "admin_logo.png",
+      "icon": "fuz-logo.png",
       "identity": "jm4293"
     }
   },

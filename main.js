@@ -11,7 +11,7 @@ const __dirname = path.dirname(new URL(import.meta.url).pathname); // __dirname 
 async function createWindow() {
   // preload 경로 확인 (절대 경로 사용)
   const win = new BrowserWindow({
-    title: 'Shook',
+    title: 'FUZ',
     width: 400,
     height: 400,
     webPreferences: {
